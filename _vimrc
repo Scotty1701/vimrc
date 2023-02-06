@@ -99,21 +99,22 @@ if has("gui_running")
 endif
 
 " Save backup/swap/undo files to central location
-let &backupdir='C:/Program Files/Vim/tmp/'
+let &backupdir='C:/Users/Isaac/vimfiles/tmp/'
 let &directory='C:/Users/Isaac/vimfiles/tmp/'
 let &undodir='C:/Users/Isaac/vimfiles/tmp/'
 
 " Set the default python to python3
 let g:pymode_python = 'python3'
-let &pythonthreedll='C:\Program Files\Python310\python310.dll'
-let &pythonthreehome='C:\Program Files\Python310'
+let &pythonthreedll='C:\Users\Isaac\AppData\Local\Programs\Python\Python310\Python310.dll'
+let &pythonthreehome='C:\Users\Isaac\AppData\Local\Programs\Python\Python310'
 
 " Set the color scheme
 colorscheme isaaccolor
 
 " Set the font
 if has("gui_running")
-	set guifont=Lucida_Sans_Typewriter:h10:cANSI:qDRAFT
+    " set guifont=Lucida_Console:h10:cANSI:qDRAFT
+    set guifont=Lucida_Sans_Typewriter:h10:cANSI:qDRAFT
 endif
 
 " Turn on relative numbering when in normal or visual mode, go to normal numbering in insert
@@ -215,9 +216,15 @@ let g:NERDTreeShowLineNumbers = 1
 set encoding=utf-8
 set autoread " Automatically reload file after changes
 autocmd BufEnter *.urdf setf xml
+
+" Ctrl+Backspace to delete previous word
+imap <C-BS> <C-W>
+set backspace=indent,eol,start
+
 " Delete without yanking
 nnoremap <leader>d "_d
 vnoremap <leader>d "_d
+
 " Replace currently selected text with the default register
 " without yanking it
 vnoremap <leader>p "_dP
