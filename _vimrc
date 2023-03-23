@@ -99,14 +99,16 @@ if has("gui_running")
 endif
 
 " Save backup/swap/undo files to central location
-let &backupdir='C:/Users/Isaac/vimfiles/tmp/'
-let &directory='C:/Users/Isaac/vimfiles/tmp/'
-let &undodir='C:/Users/Isaac/vimfiles/tmp/'
+let &backupdir='C:\Users\caasi\vimfiles\tmp'
+let &directory='C:\Users\caasi\vimfiles\tmp'
+let &undodir='C:\Users\caasi\vimfiles\tmp'
 
 " Set the default python to python3
 let g:pymode_python = 'python3'
-let &pythonthreedll='C:\Users\Isaac\AppData\Local\Programs\Python\Python310\Python310.dll'
-let &pythonthreehome='C:\Users\Isaac\AppData\Local\Programs\Python\Python310'
+let &pythonthreedll='D:\Program Files\Python310\Python310.dll'
+let &pythonthreehome='D:\Program Files\Python310'
+" let &pythonthreedll='C:\Users\Isaac\AppData\Local\Programs\Python\Python310\Python310.dll'
+" let &pythonthreehome='C:\Users\Isaac\AppData\Local\Programs\Python\Python310'
 
 " Set the color scheme
 colorscheme isaaccolor
@@ -125,9 +127,6 @@ augroup numbertoggle
 	autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu | endif
 	autocmd BufLeave,FocusLost,InsertEnter,WinLeave * if &nu | set nornu | endif
 augroup END
-
-" Use \\ to clear search highlighting
-nnoremap <silent> <leader>\ :noh<return>
 
 " Start in root directory of D, makes it easier to find files in current environment
 cd C:\
@@ -216,6 +215,11 @@ let g:NERDTreeShowLineNumbers = 1
 set encoding=utf-8
 set autoread " Automatically reload file after changes
 autocmd BufEnter *.urdf setf xml
+" Shortcut to reopen NERDTree
+noremap <silent> NN :NERDTree<CR>
+" Use \\ to clear search highlighting
+nnoremap <silent> <leader>\ :noh<return>
+
 
 " Ctrl+Backspace to delete previous word
 imap <C-BS> <C-W>
