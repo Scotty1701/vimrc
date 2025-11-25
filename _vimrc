@@ -174,13 +174,12 @@ imap <C-BS> <C-W>
 set backspace=indent,eol,start
 
 " Delete without yanking
-" TODO: Make this better
-nnoremap <leader>d "_d
-vnoremap <leader>d "_d
+nnoremap d "_d
+vnoremap d "_d
 
 " Replace currently selected text with the default register
 " without yanking it
-vnoremap <leader>p "_dP
+vnoremap p "_dP
 
 " Movement
 noremap <silent> gb ^
